@@ -1,0 +1,48 @@
+# EXAMPLE CONFIGURATION - DO NOT COMMIT WITH REAL KEYS
+# Copy this to config.yaml and add your keys (config.yaml is in .gitignore)
+
+# SAFETY TOGGLES - MUST REMAIN FALSE FOR DEMO
+allow_external_fetch: false  # Enable fetching thumbnails from external URLs
+escalate_to_hotline: false   # Enable hotline escalation features
+
+# REVERSE IMAGE SEARCH API KEYS (PLACEHOLDERS)
+# TODO: Obtain keys only after legal review and partnership agreements
+api_keys:
+  tineye: "YOUR_TINEYE_API_KEY_HERE"
+  bing_visual_search: "YOUR_BING_API_KEY_HERE"
+  google_vision: "YOUR_GOOGLE_API_KEY_HERE"
+
+# RATE LIMITS (requests per minute)
+rate_limits:
+  hash_local: 10
+  search_proxy: 5
+  compare: 5
+
+# FETCH CONSTRAINTS
+fetch_limits:
+  max_thumbnail_bytes: 262144  # 256 KB max
+  timeout_seconds: 10
+  max_candidates_per_search: 20
+
+# SIMILARITY THRESHOLD FOR MATCHES
+similarity_threshold: 0.85  # 85% similarity to consider a match
+
+# HOTLINE CONTACTS (PLACEHOLDERS - UPDATE WITH REAL CONTACTS)
+# TODO: Establish partnerships before enabling
+hotline_contacts:
+  ncmec_cybertip: "https://www.cybertipline.org"
+  inhope_network: "https://www.inhope.org"
+  local_law_enforcement: "PLACEHOLDER - ADD LOCAL CONTACT"
+  
+# CONTACT INFORMATION
+contact_emails:
+  support: "support@example.com"
+  legal: "legal@example.com"
+  partnerships: "partnerships@example.com"
+
+# LOGGING (SAFE METADATA ONLY)
+# DO NOT LOG: IP addresses, image bytes, personal info
+logging:
+  level: "INFO"
+  log_file: null  # null = stdout only
+  log_metadata: true  # URLs, timestamps, similarity scores only
